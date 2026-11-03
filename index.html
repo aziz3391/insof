@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>INSOF öquv markazi — Biletingiz tayyor</title>
+<meta name="description" content="INSOF öquv markazi: noldan CEFR B2 gaça 6–8 oyda. Darslar işdan keyin. Bepul onlayn daraja testi.">
+<meta property="og:title" content="INSOF — Biletingiz tayyor">
+<meta property="og:description" content="Yönalış: noldan — native bilan bemalol suhbatgaça. 6–8 oy, işdan keyin.">
+<meta name="theme-color" content="#0E2E24">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23F2A541'/%3E%3Cpath transform='translate(4 4)' d='M21 12c0-.8-.7-1.5-1.5-1.5H15L10 3H8l2.5 7.5H6L4.5 8H3l1 4-1 4h1.5L6 13.5h4.5L8 21h2l5-7.5h4.5c.8 0 1.5-.7 1.5-1.5z' fill='%230E2E24'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+:root{
+  --deep:#0E2E24; --mid:#1A4A38; --sage:#3F7A5C; --line:#7FB08F; --amber:#F2A541; --amber-d:#D98B26;
+  --ivory:#F6F3EE; --paper:#FFFFFF; --ink:#0E2E24; --muted:rgba(255,255,255,.78); --soft:rgba(255,255,255,.6);
+  --ease:cubic-bezier(.2,.8,.2,1); --wrap:min(1160px,calc(100% - 32px));
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html{background:var(--deep);color-scheme:dark;-webkit-text-size-adjust:100%}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{margin:0;color:#fff;font-family:Manrope,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.5}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.wrap{width:var(--wrap);margin-inline:auto}
+.bg{position:fixed;inset:0;z-index:-2;background:radial-gradient(1100px 800px at 78% 30%,#2E6A4F 0%,#1A4A38 40%,#0E2E24 78%)}
+.grain{position:fixed;inset:-50%;z-index:-1;pointer-events:none;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.mono{font-family:var(--mono)}
+
+/* nav */
+.nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:50;width:var(--wrap);height:68px;border-radius:999px;display:flex;align-items:center;justify-content:space-between;padding:0 8px 0 22px;
+  background:rgba(14,46,36,.55);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.brand{font-weight:800;letter-spacing:.08em;font-size:20px}
+.brand small{font-weight:600;letter-spacing:.08em;font-size:12px;color:var(--soft);margin-left:8px}
+.nav-links{display:flex;gap:4px}
+.nav-links a{padding:9px 16px;border-radius:999px;font-weight:600;font-size:15px;color:var(--muted);transition:background .3s,color .3s}
+.nav-links a:hover{background:rgba(255,255,255,.1);color:#fff}
+.btn{display:inline-flex;align-items:center;gap:12px;height:56px;padding:0 8px 0 24px;border-radius:999px;border:0;font-weight:800;font-size:17px;white-space:nowrap;transition:transform .35s var(--ease),background .3s}
+.btn .dot{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;transition:transform .45s var(--ease)}
+.btn:hover .dot{transform:translateX(3px)}
+.btn-amber{background:var(--amber);color:var(--deep)}
+.btn-amber .dot{background:var(--deep);color:var(--amber)}
+.btn-ghost{background:transparent;border:1.5px solid rgba(255,255,255,.35);padding:0 24px}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn-sm{height:50px;font-size:15px;padding:0 6px 0 18px}.btn-sm .dot{width:38px;height:38px}
+
+/* hero (pinned) */
+.hero{position:relative;height:300vh}
+.hero-pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.hero-copy{position:absolute;left:max(16px,calc((100vw - 1160px)/2));top:clamp(110px,15vh,150px);max-width:620px;z-index:2;will-change:transform,opacity}
+.chip{display:inline-flex;align-items:center;height:40px;padding:0 16px;border-radius:999px;border:1.5px solid rgba(255,255,255,.3);font-size:14px;font-weight:700;letter-spacing:.08em}
+h1{margin:22px 0 0;font-weight:800;font-size:clamp(56px,8.4vw,120px);line-height:.95;letter-spacing:-.045em}
+h1 .am{color:var(--amber)}
+.split .w{display:inline-block;opacity:0;transform:translateY(40%) rotate(4deg);filter:blur(10px);animation:wIn 1s var(--ease) forwards;animation-delay:calc(var(--i)*120ms + 200ms)}
+@keyframes wIn{to{opacity:1;transform:none;filter:none}}
+.hero-sub{margin:22px 0 0;font-size:clamp(18px,1.7vw,24px);color:var(--muted);max-width:520px}
+.hero-cta{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
+.fade-up{opacity:0;transform:translateY(20px);animation:fUp .9s var(--ease) forwards;animation-delay:var(--d,0s)}
+@keyframes fUp{to{opacity:1;transform:none}}
+.route-bg{position:absolute;inset:0;pointer-events:none}
+.scroll-cue{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--soft);display:flex;flex-direction:column;align-items:center;gap:8px;text-transform:uppercase}
+.scroll-cue i{width:2px;height:36px;background:linear-gradient(var(--amber),transparent);animation:cue 1.8s var(--ease) infinite;transform-origin:top}
+@keyframes cue{0%{transform:scaleY(0)}60%{transform:scaleY(1);opacity:1}100%{opacity:0}}
+
+/* the ticket */
+.ticket-stage{position:absolute;right:max(16px,calc((100vw - 1240px)/2));top:56%;width:min(700px,50vw);aspect-ratio:940/470;transform:translateY(-50%);perspective:1400px;z-index:1;container-type:inline-size;animation:fadeO 1s var(--ease) .35s both}
+@keyframes fadeO{from{opacity:0}to{opacity:1}}
+.hook-in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 16px;pointer-events:none;z-index:3}
+.hook-in>div{opacity:0;transform:translateY(30px);will-change:transform,opacity}
+.hook-in .q{font-size:clamp(32px,5vw,68px);font-weight:800;letter-spacing:-.035em;line-height:1.08;max-width:1000px}
+.hook-in .q2{margin-top:14px;color:var(--soft)}
+.hook-in .a{margin-top:44px;font-size:clamp(46px,7vw,104px);font-weight:800;letter-spacing:-.045em;line-height:1}
+.hook-in .a span{color:var(--amber)}
+.ticket{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform;transform:rotate(-4deg)}
+.t-main,.t-stub{position:absolute;top:0;bottom:0;background:var(--ivory);color:var(--ink);box-shadow:0 40px 80px rgba(0,0,0,.45);overflow:hidden}
+.t-main{left:0;width:73.4%;border-radius:28px 0 0 28px;
+  -webkit-mask:radial-gradient(circle 22px at 100% 0,#0000 98%,#000) top/100% 51% no-repeat,radial-gradient(circle 22px at 100% 100%,#0000 98%,#000) bottom/100% 51% no-repeat;
+  mask:radial-gradient(circle 22px at 100% 0,#0000 98%,#000) top/100% 51% no-repeat,radial-gradient(circle 22px at 100% 100%,#0000 98%,#000) bottom/100% 51% no-repeat}
+.t-stub{right:0;width:26.6%;border-radius:0 28px 28px 0;will-change:transform;
+  -webkit-mask:radial-gradient(circle 22px at 0 0,#0000 98%,#000) top/100% 51% no-repeat,radial-gradient(circle 22px at 0 100%,#0000 98%,#000) bottom/100% 51% no-repeat;
+  mask:radial-gradient(circle 22px at 0 0,#0000 98%,#000) top/100% 51% no-repeat,radial-gradient(circle 22px at 0 100%,#0000 98%,#000) bottom/100% 51% no-repeat}
+.t-stub::before{content:"";position:absolute;left:0;top:30px;bottom:30px;border-left:3px dashed rgba(14,46,36,.3)}
+.t-band{height:20.4%;background:var(--sage);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 6%;font-weight:800;letter-spacing:.12em;font-size:2cqw}
+.t-band .mono{font-weight:500;letter-spacing:.04em;opacity:.9}
+.t-body{position:relative;padding:3% 6% 0;height:79.6%}
+.lbl{font-size:14px;font-weight:700;letter-spacing:.12em;color:var(--sage)}
+.t-route{display:flex;justify-content:space-between;align-items:flex-end;position:relative}
+.big{font-size:118px;font-weight:800;line-height:1;letter-spacing:-.04em}
+.cap{font-size:20px;font-weight:600}
+.ticket .lbl{font-size:1.5cqw}.ticket .big{font-size:12.6cqw}.ticket .cap{font-size:2.1cqw}.ticket .val{font-size:3cqw}
+.t-arc{position:absolute;left:22%;right:28%;top:8%;height:60%}
+.t-fields{position:absolute;left:6%;right:6%;bottom:9%;padding-top:3.5%;border-top:2px solid rgba(14,46,36,.12);display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.val{margin-top:4px;font-size:28px;font-weight:800}
+.stamp{position:absolute;right:4%;bottom:6%;width:15cqw;aspect-ratio:1;border-radius:50%;border:3px solid var(--amber);display:grid;place-items:center;transform:rotate(-16deg);color:var(--amber-d)}
+.stamp>div{width:84%;aspect-ratio:1;border:2px solid var(--amber);border-radius:50%;display:grid;place-items:center;text-align:center;font-size:1.5cqw;font-weight:800;letter-spacing:.08em;line-height:1.2}
+.s-band{height:20.4%;background:var(--sage);color:#fff;display:flex;align-items:center;padding:0 14%;font-weight:800;letter-spacing:.12em;font-size:1.9cqw}
+.s-body{padding:6% 14%}
+.ticket .s-body .val{font-size:3.6cqw}
+.barcode{margin-top:8%;height:11cqw;background:repeating-linear-gradient(90deg,var(--ink) 0 3px,transparent 3px 6px,var(--ink) 6px 8px,transparent 8px 12px,var(--ink) 12px 17px,transparent 17px 20px)}
+
+/* sections */
+.section{padding:130px 0;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--amber)}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--amber)}
+h2{margin:16px 0 0;font-weight:800;font-size:clamp(40px,5.6vw,78px);line-height:1;letter-spacing:-.04em}
+h2 .am{color:var(--amber)}
+.lead{margin:18px 0 0;font-size:clamp(17px,1.5vw,21px);color:var(--muted);max-width:620px}
+[data-reveal]{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:calc(var(--s,0)*90ms)}
+[data-reveal].in{opacity:1;transform:none}
+
+/* question hook */
+.hook{text-align:center;padding:160px 0}
+.hook .q{font-size:clamp(34px,5vw,68px);font-weight:800;letter-spacing:-.035em;line-height:1.08}
+.hook .q2{margin-top:18px;color:var(--soft)}
+.hook .a{margin-top:56px;font-size:clamp(46px,7vw,104px);font-weight:800;letter-spacing:-.045em;line-height:1}
+.hook .a span{color:var(--amber)}
+
+/* route map */
+.map{margin-top:56px;position:relative;border-radius:32px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);padding:40px 34px 34px}
+.map svg{width:100%;height:auto;display:block}
+.stops{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));margin-top:6px;text-align:center}
+.stops b{display:block;font-size:clamp(22px,3vw,38px);font-weight:800;letter-spacing:-.02em}
+.stops span{font-size:14px;color:var(--soft);font-weight:600}
+.stops .goal b{color:var(--amber)}
+.map-foot{margin-top:26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:var(--mono);font-size:14px;color:var(--muted)}
+
+/* perks as stubs */
+.perks{margin-top:56px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.perk{position:relative;background:var(--ivory);color:var(--ink);border-radius:22px;padding:26px 24px 24px;min-height:230px;display:flex;flex-direction:column;gap:12px;transition:transform .5s var(--ease)}
+.perk:hover{transform:translateY(-6px) rotate(-1deg)}
+.perk::after{content:"";position:absolute;left:18px;right:18px;top:64px;border-top:2px dashed rgba(14,46,36,.2)}
+.perk .lbl{font-family:var(--mono)}
+.perk .ic{position:absolute;right:20px;top:18px;width:36px;height:36px;color:var(--amber-d)}
+.perk h3{margin:22px 0 0;font-size:24px;font-weight:800;letter-spacing:-.01em;line-height:1.15}
+.perk p{margin:0;font-size:16px;color:#33493F}
+
+/* other flights */
+.flights{margin-top:48px;border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.16)}
+.fl{display:grid;grid-template-columns:120px 1fr 160px;gap:16px;align-items:center;padding:22px 26px;border-top:1px solid rgba(255,255,255,.1);transition:background .3s}
+.fl:first-child{border-top:0}
+.fl:hover{background:rgba(255,255,255,.05)}
+.fl .code{font-family:var(--mono);color:var(--amber);font-weight:700}
+.fl b{font-size:20px}
+.fl .st{justify-self:end;font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.08em;padding:6px 12px;border-radius:999px;background:rgba(242,165,65,.14);color:var(--amber)}
+.fl .st.soon{background:rgba(255,255,255,.08);color:var(--soft)}
+.fl-head{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--soft);background:rgba(255,255,255,.04)}
+
+/* quiz (check-in) */
+.quiz{margin-top:48px;position:relative;background:var(--ivory);color:var(--ink);border-radius:30px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.35)}
+.quiz-band{background:var(--sage);color:#fff;display:flex;justify-content:space-between;align-items:center;padding:18px 34px;font-weight:800;letter-spacing:.12em;font-size:15px}
+.quiz-band .mono{font-weight:500;letter-spacing:.04em}
+.quiz-body{padding:38px 40px 40px;min-height:420px}
+.qview{animation:qIn .55s var(--ease)}
+.qview.out{animation:qOut .2s ease forwards}
+@keyframes qIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes qOut{to{opacity:0;transform:translateY(-10px)}}
+.intro{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+.intro h3{margin:0;font-size:clamp(28px,3vw,42px);font-weight:800;letter-spacing:-.03em;line-height:1.08}
+.intro p{color:#33493F;font-size:17px}
+.tips{margin:18px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+.tips li{display:flex;gap:10px;color:#33493F;font-weight:600}
+.tips li::before{content:"✓";color:var(--amber-d);font-weight:800}
+.parts{display:grid;gap:12px}
+.part{border:2px dashed rgba(14,46,36,.2);border-radius:18px;padding:18px 20px;display:flex;justify-content:space-between;align-items:center}
+.part b{font-size:19px}.part span{font-family:var(--mono);font-size:13px;color:var(--sage);font-weight:700}
+.btn-ink{background:var(--deep);color:#fff}.btn-ink .dot{background:var(--amber);color:var(--deep)}
+.qtop{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:14px;font-weight:700;color:var(--sage)}
+.bar{margin-top:12px;height:8px;border-radius:999px;background:rgba(14,46,36,.1);overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--sage),var(--amber));border-radius:inherit;transition:width .6s var(--ease)}
+.inst{margin:30px 0 0;font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sage)}
+.prompt{margin:10px 0 0;font-size:clamp(24px,3vw,38px);font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.prompt .blank{display:inline-block;min-width:110px;border-bottom:3px solid var(--amber);margin:0 6px;transform:translateY(-6px)}
+.opts{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.opt{display:flex;align-items:center;gap:14px;min-height:68px;padding:12px 18px 12px 12px;border-radius:18px;text-align:left;background:#fff;border:2px solid rgba(14,46,36,.14);font-size:18px;font-weight:700;color:var(--ink);transition:border-color .25s,background .25s,transform .25s var(--ease)}
+.opt:hover{transform:translateY(-2px);border-color:rgba(14,46,36,.35)}
+.opt .k{width:40px;height:40px;flex:0 0 40px;border-radius:12px;background:rgba(14,46,36,.08);display:grid;place-items:center;font-family:var(--mono);font-weight:700}
+.opt[aria-pressed="true"]{border-color:var(--amber);background:#FFF6E8}
+.opt[aria-pressed="true"] .k{background:var(--amber);color:var(--deep)}
+.qfoot{margin-top:26px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.linkbtn{background:none;border:0;padding:8px 4px;font-weight:700;color:var(--sage)}
+.player{margin-top:22px;display:flex;align-items:center;gap:18px;padding:14px 18px 14px 14px;border-radius:22px;background:#fff;border:2px solid rgba(14,46,36,.12)}
+.play{width:72px;height:72px;flex:0 0 72px;border-radius:50%;border:0;background:var(--deep);color:var(--amber);display:grid;place-items:center}
+.play:disabled{opacity:.4;cursor:not-allowed}
+.speaking .play{animation:pulse 1.4s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(242,165,65,.6)}100%{box-shadow:0 0 0 20px rgba(242,165,65,0)}}
+.wave{flex:1;height:48px;display:flex;align-items:center;gap:4px;min-width:0}
+.wave i{flex:1;max-width:7px;border-radius:4px;background:rgba(14,46,36,.2);height:var(--h)}
+.speaking .wave i{background:var(--amber);animation:wv .9s ease-in-out infinite;animation-delay:var(--wd)}
+@keyframes wv{50%{transform:scaleY(.35)}}
+.plays{font-family:var(--mono);font-size:13px;font-weight:700;color:var(--sage);white-space:nowrap}
+.note{margin-top:12px;font-weight:600;color:#A65E00}
+.center{text-align:center;max-width:560px;margin:30px auto 0}
+.center h3{font-size:clamp(26px,3vw,36px);margin:16px 0 0;font-weight:800}
+.center p{color:#33493F;font-size:17px}
+.acts{margin-top:22px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+
+/* result boarding pass */
+.pass{display:grid;grid-template-columns:1fr 260px;gap:0;border-radius:22px;overflow:hidden;border:2px solid rgba(14,46,36,.12);background:#fff}
+.pass-main{padding:28px 30px}
+.pass-stub{padding:28px 26px;border-left:3px dashed rgba(14,46,36,.22);background:#FBF8F2;display:flex;flex-direction:column;gap:6px}
+.pass .route{display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
+.pass .big{font-size:clamp(56px,8vw,96px)}
+.pass .lv{color:var(--amber-d)}
+.skills{margin-top:22px;display:grid;gap:12px}
+.sk{display:grid;grid-template-columns:130px 1fr 50px;gap:12px;align-items:center;font-weight:700}
+.sk .bar{margin:0;height:10px}
+.sk .v{text-align:right;font-family:var(--mono)}
+.disclaim{margin-top:16px;font-size:14px;color:#5A6E64;font-weight:600}
+
+/* contact */
+.cta{border-radius:36px;padding:70px 56px;background:var(--ivory);color:var(--ink);position:relative;overflow:hidden}
+.cta h2{color:var(--ink)}
+.cta .lead{color:#33493F}
+.desk{margin-top:36px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.desk>a,.desk>div{display:block;border:2px dashed rgba(14,46,36,.2);border-radius:20px;padding:20px 22px;transition:background .3s}
+.desk>a:hover{background:#fff}
+.desk .lbl{font-family:var(--mono)}
+.desk b{display:block;margin-top:6px;font-size:20px}
+.desk>.addr{display:flex;flex-direction:column;gap:4px}
+.desk .uni{text-decoration:underline;text-decoration-color:rgba(217,139,38,.6);text-underline-offset:4px;transition:color .3s}
+.desk .uni:hover{color:var(--amber-d)}
+.desk .street{font-size:14px;font-weight:600;color:#5A6E64}
+.desk .maplink{margin-top:8px;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 14px;border-radius:999px;background:var(--deep);color:#fff;font-size:14px;font-weight:700;transition:background .3s}
+.desk .maplink:hover{background:var(--sage)}
+.plane-fly{position:absolute;right:-60px;top:40px;width:120px;opacity:.12;color:var(--deep)}
+footer{padding:40px 0 56px;color:var(--soft);font-size:14px;font-weight:600}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:980px){
+  .nav-links{display:none}
+  .perks{grid-template-columns:1fr 1fr}
+  .intro,.pass{grid-template-columns:1fr}
+  .pass-stub{border-left:0;border-top:3px dashed rgba(14,46,36,.22)}
+  .desk{grid-template-columns:1fr}
+  .ticket-stage{top:auto;bottom:8vh;right:auto;left:50%;width:min(700px,90vw);transform:translateX(-50%)}
+}
+@media (max-width:640px){
+  .hero{height:200vh}
+  .hero-copy{top:100px}
+  .hero-sub{font-size:17px}
+  .ticket-stage{width:94vw;bottom:7vh}
+  .hero-cta .btn-ghost{display:none}
+  .section{padding:90px 0}
+  .perks{grid-template-columns:1fr}
+  .opts{grid-template-columns:1fr}
+  .quiz-body{padding:24px 18px}
+  .quiz-band{padding:14px 18px;font-size:12px}
+  .fl{grid-template-columns:1fr;gap:6px}.fl .st{justify-self:start}
+  .cta{padding:44px 22px}
+  .map{padding:22px 14px}
+  .stops span{font-size:11px}
+  .sk{grid-template-columns:100px 1fr 44px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .split .w,.fade-up,[data-reveal]{opacity:1;transform:none;filter:none}
+}
+</style>
+</head>
+<body>
+<div class="bg" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav">
+  <a href="#top" class="brand">INSOF<small>ÖQUV MARKAZI</small></a>
+  <nav class="nav-links" aria-label="Asosiy menyu">
+    <a href="#yonalish">Yönalış</a>
+    <a href="#afzallik">Afzalliklar</a>
+    <a href="#test">Bepul test</a>
+    <a href="#kassa">Kassa</a>
+  </nav>
+  <a href="#test" class="btn btn-amber btn-sm">Check-in <span class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12c0-.8-.7-1.5-1.5-1.5H15L10 3H8l2.5 7.5H6L4.5 8H3l1 4-1 4h1.5L6 13.5h4.5L8 21h2l5-7.5h4.5c.8 0 1.5-.7 1.5-1.5z"/></svg></span></a>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-pin">
+    <svg class="route-bg" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M-40 380C320 300 680 470 1480 240" stroke="#7FB08F" stroke-opacity=".35" stroke-width="2" stroke-dasharray="2 14" stroke-linecap="round" fill="none"/>
+      <path d="M-40 860C340 770 760 900 1480 720" stroke="#7FB08F" stroke-opacity=".28" stroke-width="2" stroke-dasharray="2 14" stroke-linecap="round" fill="none"/>
+    </svg>
+    <div class="hero-copy" id="heroCopy">
+      <span class="chip fade-up" style="--d:.05s">INSOF · ÖQUV MARKAZI</span>
+      <h1 class="split"><span class="w" style="--i:0">Biletingiz</span><br><span class="w am" style="--i:1">tayyor.</span></h1>
+      <p class="hero-sub fade-up" style="--d:.6s">Yönalış: noldan — native bilan bemalol suhbatgaça. 6–8 oy, işdan keyin.</p>
+      <div class="hero-cta fade-up" style="--d:.8s">
+        <a href="#test" class="btn btn-amber">Bepul daraja testi <span class="dot"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a href="#kassa" class="btn btn-ghost">Kassaga yoziş</a>
+      </div>
+    </div>
+
+    <div class="ticket-stage" aria-label="Yöl bileti: noldan B2 gaça, 6–8 oy, işdan keyin">
+      <div class="ticket" id="ticket">
+        <div class="t-main">
+          <div class="t-band"><span>YÖL BILETI</span><span class="mono">INSOF · EN-0→B2</span></div>
+          <div class="t-body">
+            <div class="t-route">
+              <div><div class="lbl">QAYERDAN</div><div class="big">0</div><div class="cap">Noldan</div></div>
+              <div style="text-align:right"><div class="lbl">QAYERGA</div><div class="big">B2</div><div class="cap">Native bilan suhbat</div></div>
+              <svg class="t-arc" viewBox="0 0 320 120" preserveAspectRatio="none" aria-hidden="true">
+                <path id="arcPath" d="M6 110C90 20 230 20 314 110" stroke="#F2A541" stroke-width="3" stroke-dasharray="3 10" stroke-linecap="round" fill="none" vector-effect="non-scaling-stroke"/>
+              </svg>
+              <div id="tPlane" style="position:absolute;left:47%;top:3%;width:6.6cqw;aspect-ratio:1;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 6px 16px rgba(14,46,36,.15)">
+                <svg width="60%" height="60%" viewBox="0 0 24 24" fill="#F2A541" aria-hidden="true"><path d="M21 12c0-.8-.7-1.5-1.5-1.5H15L10 3H8l2.5 7.5H6L4.5 8H3l1 4-1 4h1.5L6 13.5h4.5L8 21h2l5-7.5h4.5c.8 0 1.5-.7 1.5-1.5z"/></svg>
+              </div>
+            </div>
+            <div class="t-fields">
+              <div><div class="lbl">DAVOMIYLIK</div><div class="val">6–8 oy</div></div>
+              <div><div class="lbl">JÖNAŞ VAQTI</div><div class="val">Işdan keyin</div></div>
+              <div></div>
+            </div>
+            <div class="stamp"><div>QÖŞMA<br>SERTIFIKAT<br>BILAN</div></div>
+          </div>
+        </div>
+        <div class="t-stub" id="stub">
+          <div class="s-band">YÖLOVÇI</div>
+          <div class="s-body">
+            <div class="lbl">ISM</div><div class="val">Siz</div>
+            <div class="lbl" style="margin-top:10px">ÖRIN</div><div class="val">B2</div>
+            <div class="barcode" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hook-in" aria-hidden="false">
+      <div class="q" id="h1">Ingliz tilini oxirgi marta qaçon boşlagansiz?</div>
+      <div class="q q2" id="h2">Va qaçon tashlagansiz?</div>
+      <div class="a" id="h3">Bu safar — <span>oxirigaça.</span></div>
+    </div>
+    <div class="scroll-cue" id="cue" aria-hidden="true">Bortga<i></i></div>
+  </div>
+</section>
+
+<!-- ROUTE -->
+<section class="section" id="yonalish">
+  <div class="wrap">
+    <div class="eyebrow" data-reveal>Yönalış xaritasi</div>
+    <h2 data-reveal style="--s:1">Noldan B2 gaça — <span class="am">6–8 oy.</span></h2>
+    <p class="lead" data-reveal style="--s:2">Tört bosqiç, bitta yöl. Oxirida — native bilan bemalol suhbat.</p>
+    <div class="map" data-reveal style="--s:3" id="map">
+      <svg viewBox="0 0 1000 160" aria-hidden="true">
+        <path id="routeBase" d="M100 120C250 20 350 20 500 80S750 140 900 40" stroke="rgba(255,255,255,.18)" stroke-width="3" stroke-dasharray="4 12" stroke-linecap="round" fill="none"/>
+        <path id="routeDraw" d="M100 120C250 20 350 20 500 80S750 140 900 40" stroke="#F2A541" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <g id="routeDots"></g>
+        <g id="routePlane"><circle r="22" fill="#F6F3EE"/><path transform="translate(-12 -12)" d="M21 12c0-.8-.7-1.5-1.5-1.5H15L10 3H8l2.5 7.5H6L4.5 8H3l1 4-1 4h1.5L6 13.5h4.5L8 21h2l5-7.5h4.5c.8 0 1.5-.7 1.5-1.5z" fill="#0E2E24"/></g>
+      </svg>
+      <div class="stops">
+        <div><b>0</b><span>Noldan</span></div><div><b>A1</b><span>Taniş</span></div><div><b>A2</b><span>Kundalik</span></div><div><b>B1</b><span>Erkin</span></div><div class="goal"><b>B2</b><span>Native bilan</span></div>
+      </div>
+      <div class="map-foot"><span>PARVOZ: 6–8 OY</span><span>JÖNAŞ: IŞDAN KEYIN</span><span>QÖNIŞ: B2</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PERKS -->
+<section class="section" id="afzallik">
+  <div class="wrap">
+    <div class="eyebrow" data-reveal>Bortda</div>
+    <h2 data-reveal style="--s:1">Reys şartlari <span class="am">insofli.</span></h2>
+    <div class="perks">
+      <div class="perk" data-reveal style="--s:0"><span class="lbl">01 · VAQT</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><h3>Işdan keyin</h3><p>Darslar keçqurun. Işingizni tashlab kelmaysiz.</p></div>
+      <div class="perk" data-reveal style="--s:1"><span class="lbl">02 · NATIJA</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.5 8.6 8.6 0 0 1-3.8-.9L3 21l1.9-5.2A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg><h3>Native bilan suhbat</h3><p>Kurs oxirida «Hello»dan keyin jim qolmaysiz.</p></div>
+      <div class="perk" data-reveal style="--s:2"><span class="lbl">03 · HUJJAT</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14l-1.5 7 5-2.5 5 2.5-1.5-7"/></svg><h3>Qöşma sertifikat</h3><p>Universitet va INSOF imzosi bilan.</p></div>
+      <div class="perk" data-reveal style="--s:3"><span class="lbl">04 · NARX</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 13.5l-7 7a2 2 0 0 1-2.8 0L3 12.8V3h9.8l7.7 7.7a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg><h3>Bitta narx</h3><p>Bitta kurs — bitta narx. Ustama tölovlarsiz.</p></div>
+    </div>
+
+    <div class="flights" data-reveal style="--s:2">
+      <div class="fl fl-head"><span>REYS</span><span>YÖNALIŞ</span><span style="justify-self:end">HOLAT</span></div>
+      <div class="fl"><span class="code">EN-0→B2</span><b>Ingliz tili · noldan B2 gaça</b><span class="st">RÖYXAT OÇIQ</span></div>
+      <div class="fl"><span class="code">FN-101</span><b>Moliyaviy savodxonlik</b><span class="st soon">TEZ ORADA</span></div>
+      <div class="fl"><span class="code">FN-201</span><b>Moliyaviy tahlil</b><span class="st soon">TEZ ORADA</span></div>
+      <div class="fl"><span class="code">FN-301</span><b>Global moliyaviy bozorlar va instrumentlar tahlili</b><span class="st soon">TEZ ORADA</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEST -->
+<section class="section" id="test">
+  <div class="wrap">
+    <div class="eyebrow" data-reveal>Check-in</div>
+    <h2 data-reveal style="--s:1">Örningizni <span class="am">aniqlang.</span></h2>
+    <p class="lead" data-reveal style="--s:2">Bepul daraja testi: grammatika va eşitib tuşuniş. 25 savol, taxminan 10 daqiqa.</p>
+    <div class="quiz" data-reveal style="--s:3">
+      <div class="quiz-band"><span>CHECK-IN · DARAJA TESTI</span><span class="mono" id="qBandRight">INSOF · EN-0→B2</span></div>
+      <div class="quiz-body" id="quiz" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="kassa">
+  <div class="wrap">
+    <div class="cta" data-reveal>
+      <svg class="plane-fly" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12c0-.8-.7-1.5-1.5-1.5H15L10 3H8l2.5 7.5H6L4.5 8H3l1 4-1 4h1.5L6 13.5h4.5L8 21h2l5-7.5h4.5c.8 0 1.5-.7 1.5-1.5z"/></svg>
+      <div class="eyebrow" style="color:var(--amber-d)">Kassa</div>
+      <h2>Bort eşiklari <span style="color:var(--amber-d)">oçiq.</span></h2>
+      <p class="lead">Savollaringiz bölsa — yozing yoki qöngiroq qiling. Sizga mos guruh va vaqtni birga tanlaymiz.</p>
+      <div class="desk">
+        <a data-cfg-href="telegram" href="#" target="_blank" rel="noopener"><span class="lbl">TELEGRAM</span><b>@<span data-cfg="telegram">insof_promo</span></b></a>
+        <a data-cfg-href="phone" href="#"><span class="lbl">TELEFON</span><b data-cfg="phone">+998 77 111 11 35</b></a>
+        <div class="addr"><span class="lbl">MANZIL</span><b><a href="https://vatanuniversity.uz/uz" target="_blank" rel="noopener" class="uni">Vatan universiteti ↗</a></b><span class="street">Yakkasaroy tumani, Şota Rustaveli 2-tor köçasi, 2-uy</span><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Vatan+universiteti+Shota+Rustaveli+2-tor+ko%27chasi+2+Toshkent" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Xaritada oçiş</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>© <span id="yr">2026</span> INSOF öquv markazi</span><a class="mono" href="https://vatanuniversity.uz/uz" target="_blank" rel="noopener">VATAN UNIVERSITETI · TOŞKENT</a></div></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script>
+/* ===== 1. TAHRIRLANG ===== */
+const CONFIG = {
+  telegram: 'insof_promo',          // @ belgisisiz
+  phone:    '+998 77 111 11 35',        // masalan: '+998 90 123 45 67'
+  address:  'Vatan universiteti'
+};
+
+/* ===== 2. TEST SAVOLLARI (a — töğri javob indeksi; tinglaşda "audio" maydoniga mp3 qöysangiz shu ijro etiladi) ===== */
+const GRAMMAR = [
+  {lvl:'A1', q:'She ___ a teacher.', o:['is','are','am','be'], a:0},
+  {lvl:'A1', q:'___ you like coffee?', o:['Do','Does','Are','Is'], a:0},
+  {lvl:'A1', q:'There ___ two books on the table.', o:['are','is','be','am'], a:0},
+  {lvl:'A2', q:'I ___ to the cinema last weekend.', o:['went','go','have gone','was go'], a:0},
+  {lvl:'A2', q:'This bag is ___ than that one.', o:['heavier','more heavy','heavyer','the heaviest'], a:0},
+  {lvl:'A2', q:'We ___ dinner when the phone rang.', o:['were having','had','have','are having'], a:0},
+  {lvl:'B1', q:'I have lived here ___ 2019.', o:['since','for','from','during'], a:0},
+  {lvl:'B1', q:'If it rains tomorrow, we ___ at home.', o:['will stay','would stay','stayed','are stay'], a:0},
+  {lvl:'B1', q:'The letter ___ by my grandmother in 1965.', o:['was written','wrote','has written','is writing'], a:0},
+  {lvl:'B2', q:'I wish I ___ more time to study last year.', o:['had had','have had','had','would have'], a:0},
+  {lvl:'B2', q:'She denied ___ the money.', o:['taking','to take','take','to have take'], a:0},
+  {lvl:'B2', q:'By the time you arrive, we ___ the report.', o:['will have finished','will finish','finish','are finishing'], a:0},
+  {lvl:'C1', q:'___ had I sat down than the phone rang.', o:['No sooner','Hardly','Scarcely','As soon'], a:0},
+  {lvl:'C1', q:'It’s high time we ___ a decision.', o:['made','make','will make','have made'], a:0},
+  {lvl:'C1', q:'Not only ___ late, but he also forgot the tickets.', o:['was he','he was','he is','did he was'], a:0}
+];
+const LISTENING = [
+  {lvl:'A1', say:'Hello, my name is Anna. I am from London, but I live in Tashkent now.', q:'Where is Anna from?', o:['London','Tashkent','Paris','Berlin'], a:0},
+  {lvl:'A1', say:'The shop opens at nine o’clock in the morning and closes at six in the evening.', q:'When does the shop close?', o:['At six','At nine','At seven','At five'], a:0},
+  {lvl:'A2', say:'I usually take the bus to work, but today I’m walking because it’s so sunny.', q:'How is the speaker getting to work today?', o:['On foot','By bus','By car','By train'], a:0},
+  {lvl:'A2', say:'Can you buy some milk and eggs on your way home? We still have plenty of bread.', q:'What does the speaker NOT need?', o:['Bread','Milk','Eggs','Milk and eggs'], a:0},
+  {lvl:'B1', say:'I was going to apply for the job, but the deadline had already passed by the time I saw the advert.', q:'Why didn’t the speaker apply?', o:['They saw the advert too late','They didn’t like the job','They weren’t qualified','The company rejected them'], a:0},
+  {lvl:'B1', say:'If the train hadn’t been delayed, we would have arrived before the meeting started.', q:'What happened?', o:['They arrived after the meeting had started','They missed the train completely','The meeting was cancelled','They arrived early'], a:0},
+  {lvl:'B2', say:'Although the new policy was meant to cut costs, it has ended up creating more paperwork than it saved.', q:'What is the speaker’s view of the policy?', o:['It did not achieve its aim','It cut costs successfully','It reduced paperwork','It was never introduced'], a:0},
+  {lvl:'B2', say:'She’s not exactly thrilled about relocating, but she reckons it’s a price worth paying for the promotion.', q:'How does she feel about relocating?', o:['Reluctant, but she accepts it','Very excited','She refuses to move','Completely indifferent'], a:0},
+  {lvl:'C1', say:'Had the committee been more forthcoming about the risks, the investors might not have withdrawn their support so abruptly.', q:'What does the speaker imply?', o:['The committee did not share enough about the risks','The investors acted too slowly','The committee was too open about the risks','The investors increased their support'], a:0},
+  {lvl:'C1', say:'Far from being a setback, the delay gave the team a chance to rethink the project from the ground up.', q:'How does the speaker see the delay?', o:['As an opportunity','As a disaster','As irrelevant','As the result of poor planning'], a:0}
+];
+const MAX_PLAYS = 2;
+
+/* ===== 3. KOD ===== */
+(function(){
+'use strict';
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+$('#yr').textContent=new Date().getFullYear();
+const tel=CONFIG.phone.replace(/[^\d+]/g,'');
+$$('[data-cfg]').forEach(el=>{const v=CONFIG[el.dataset.cfg]; if(v) el.textContent=v.replace(/^@/,'');});
+$$('[data-cfg-href]').forEach(el=>{const k=el.dataset.cfgHref;
+  if(k==='telegram') el.href='https://t.me/'+CONFIG.telegram.replace(/^@/,'');
+  if(k==='phone') el.href=tel.length>8?'tel:'+tel:'#kassa';});
+
+/* smooth scroll */
+let lenis=null;
+addEventListener('load',()=>{ if(reduce||!window.Lenis) return;
+  lenis=new Lenis({duration:1.15,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t))});
+  (function raf(t){lenis.raf(t);requestAnimationFrame(raf);})(performance.now()); });
+function goTo(el){ if(typeof el==='string') el=$(el); if(!el) return;
+  if(lenis) lenis.scrollTo(el,{offset:-90}); else scrollTo({top:el.getBoundingClientRect().top+scrollY-90,behavior:reduce?'auto':'smooth'}); }
+$$('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const id=a.getAttribute('href'); if(id.length<2) return; e.preventDefault(); goTo(id);}));
+
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting){en.target.classList.add('in'); io.unobserve(en.target);} }),{threshold:.15});
+$$('[data-reveal]').forEach(el=>io.observe(el));
+
+/* ===== TICKET FLUTTER ON SCROLL ===== */
+const hero=$('#top'), ticket=$('#ticket'), stub=$('#stub'), copy=$('#heroCopy'), tPlane=$('#tPlane');
+let tIdle=0;
+function heroFrame(t){
+  const r=hero.getBoundingClientRect();
+  const range=Math.max(1,r.height-innerHeight);
+  const P=Math.min(1,Math.max(0,-r.top/range));          // 0..1 through pinned hero
+  const p=Math.min(1,P/0.5);                               // ticket phase = first half
+  const e=p*p*(3-2*p);                                    // smoothstep
+  tIdle=t/1000;
+  const breathe=reduce?0:Math.sin(tIdle*1.3)*(1-e)*1.2;   // gentle idle float
+  // flutter: wobble grows as ticket lifts away
+  const fl=reduce?0:Math.sin(p*Math.PI*5)*14*e;
+  const fl2=reduce?0:Math.cos(p*Math.PI*4)*10*e;
+  const x=e*innerWidth*0.75, y=-e*innerHeight*0.95 + breathe*6;
+  ticket.style.transform=`translate3d(${x}px,${y}px,0) rotateZ(${-4+e*38+fl*.6}deg) rotateX(${e*48+fl}deg) rotateY(${-e*32+fl2}deg) scale(${1-e*.35})`;
+  ticket.style.opacity=String(1-Math.max(0,(p-.78)/.22));
+  // stub tears off first, then trails behind
+  const s=Math.min(1,p*2.2), se=s*s;
+  stub.style.transform=`translate3d(${se*60}px,${se*40 - se*se*10}px,0) rotateZ(${se*16}deg) rotateY(${-se*20}deg)`;
+  // plane along the arc
+  tPlane.style.transform=`translate(${(Math.sin(tIdle*1.6)*4)}px,${Math.cos(tIdle*1.6)*3}px) rotate(${-6+Math.sin(tIdle*1.6)*4}deg)`;
+  copy.style.transform=`translate3d(0,${-e*80}px,0)`;
+  copy.style.opacity=String(1-Math.min(1,e*1.6));
+  const seg=(a,b)=>Math.min(1,Math.max(0,(P-a)/(b-a)));
+  [['#h1',.42,.55],['#h2',.55,.68],['#h3',.7,.84]].forEach(([id,a,b])=>{const k=seg(a,b),el=$(id); const kk=k*k*(3-2*k);
+    el.style.opacity=String(kk); el.style.transform=`translate3d(0,${(1-kk)*30}px,0)`;});
+  $('#cue').style.opacity=String(1-Math.min(1,P*4));
+  requestAnimationFrame(heroFrame);
+}
+requestAnimationFrame(heroFrame);
+
+/* ===== ROUTE MAP DRAW ON SCROLL ===== */
+const map=$('#map'), draw=$('#routeDraw'), rPlane=$('#routePlane'), dots=$('#routeDots');
+const L=draw.getTotalLength();
+draw.style.strokeDasharray=L; draw.style.strokeDashoffset=L;
+[0,.25,.5,.75,1].forEach((f,i)=>{const pt=draw.getPointAtLength(L*f);
+  dots.insertAdjacentHTML('beforeend',`<circle cx="${pt.x}" cy="${pt.y}" r="${i===4?12:9}" fill="${i===4?'#F2A541':'#F6F3EE'}" stroke="#0E2E24" stroke-width="3"/>`);});
+function mapFrame(){
+  const r=map.getBoundingClientRect();
+  const p=Math.min(1,Math.max(0,(innerHeight*0.85-r.top)/(innerHeight*0.7)));
+  draw.style.strokeDashoffset=String(L*(1-p));
+  const len=L*p, pt=draw.getPointAtLength(len), pt2=draw.getPointAtLength(Math.min(L,len+1));
+  const ang=Math.atan2(pt2.y-pt.y,pt2.x-pt.x)*180/Math.PI;
+  rPlane.setAttribute('transform',`translate(${pt.x} ${pt.y}) rotate(${ang})`);
+  requestAnimationFrame(mapFrame);
+}
+requestAnimationFrame(mapFrame);
+
+/* ===== LEVEL TEST ===== */
+const quiz=$('#quiz'), band=$('#qBandRight');
+const BANDS=['A1','A2','B1','B2','C1'], ORDER=['Pre-A1','A1','A2','B1','B2','C1'];
+const DESC={'Pre-A1':'Hamma narsa noldan — eng yaxşi boşlanğiç nuqta. Biz aynan şu yerdan boşlaymiz.',
+ 'A1':'Oddiy iboralarni tuşunasiz va özingiz haqingizda qisqa gapira olasiz.',
+ 'A2':'Kundalik mavzularda muloqot qila olasiz, lekin murakkab gaplar hali qiyin.',
+ 'B1':'Tanış mavzularda erkin gaplaşasiz va asosiy fikrni tuşunasiz.',
+ 'B2':'Murakkab matnlarni tuşunasiz va ravon muloqot qilasiz. Tabriklaymiz!',
+ 'C1':'Yuqori daraja: nozik ma’nolarni ham tuşunasiz.'};
+const LS='insof-ticket-test';
+const hasTTS='speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
+let voice=null;
+function pickVoice(){ if(!hasTTS) return; const vs=speechSynthesis.getVoices();
+  voice=vs.find(v=>/en-GB/i.test(v.lang)&&/Google|Natural|Neural|Daniel|Serena|Kate/i.test(v.name))||vs.find(v=>/en-US/i.test(v.lang)&&/Google|Natural|Neural|Samantha|Aria|Jenny/i.test(v.name))||vs.find(v=>/^en[-_](GB|US)/i.test(v.lang))||vs.find(v=>/^en/i.test(v.lang))||null; }
+if(hasTTS){pickVoice(); speechSynthesis.onvoiceschanged=pickVoice;}
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+const mk=(it,type)=>({type,lvl:it.lvl,q:it.q,say:it.say,audio:it.audio,opts:shuffle(it.o.map((t,i)=>({t,ok:i===it.a})))});
+let S;
+function reset(){S={stage:'intro',items:[...GRAMMAR.map(g=>mk(g,'g')),...LISTENING.map(l=>mk(l,'l'))],i:0,ans:[],sel:null,plays:0,speaking:false,skipL:false,brk:false};}
+const loadLast=()=>{try{return JSON.parse(localStorage.getItem(LS));}catch(e){return null;}};
+const saveLast=r=>{try{localStorage.setItem(LS,JSON.stringify({level:r.level}));}catch(e){}};
+const ARROW='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+const PLANE='<svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12c0-.8-.7-1.5-1.5-1.5H15L10 3H8l2.5 7.5H6L4.5 8H3l1 4-1 4h1.5L6 13.5h4.5L8 21h2l5-7.5h4.5c.8 0 1.5-.7 1.5-1.5z"/></svg>';
+const PLAY='<svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>';
+const REPLAY='<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>';
+
+function swap(html,after){const cur=quiz.firstElementChild;
+  const put=()=>{quiz.innerHTML='<div class="qview">'+html+'</div>'; after&&after();};
+  if(cur&&!reduce){cur.classList.add('out');setTimeout(put,200);}else put();}
+function keep(){const r=quiz.getBoundingClientRect(); if(r.top<0||r.top>innerHeight*.6) goTo(quiz.parentElement);}
+function render(){ if(S.stage==='intro')return intro(); if(S.stage==='break')return brk(); if(S.stage==='result')return result(); q(); }
+
+function intro(){ band.textContent='INSOF · EN-0→B2'; const last=loadLast();
+  swap(`<div class="intro"><div>
+    <h3>10 daqiqada örningizni aniqlang.</h3>
+    <p>Savollar A1 dan C1 gaça qiyinlaşib boradi. Bilmasangiz — taxmin qilmang, «Bilmayman»ni bosing: natija aniqroq çiqadi.</p>
+    <ul class="tips"><li>Quloqçin tavsiya etiladi</li><li>Har bir audioni ${MAX_PLAYS} marta tinglaş mumkin</li><li>Natija taxminiy — aniq daraja kiriş suhbatida belgilanadi</li></ul>
+    <div style="margin-top:26px"><button class="btn btn-ink" id="start">Check-in boşlaş <span class="dot">${ARROW}</span></button></div>
+    ${last&&last.level?`<p class="mono" style="margin-top:16px;font-size:14px;color:var(--sage);font-weight:700">OXIRGI ÖRIN: ${last.level}</p>`:''}
+  </div><div class="parts">
+    <div class="part"><b>Grammatika</b><span>${GRAMMAR.length} SAVOL</span></div>
+    <div class="part"><b>Eşitib tuşuniş</b><span>${LISTENING.length} AUDIO</span></div>
+    <div class="part"><b>Natija</b><span>BORT TALONI</span></div>
+  </div></div>`,()=>{$('#start').onclick=()=>{S.stage='q';render();keep();};});}
+
+function brk(){ const ok=hasTTS||S.items.slice(GRAMMAR.length).some(i=>i.audio);
+  swap(`<div class="center"><div style="color:var(--amber-d)">${PLANE}</div>
+    <h3>1-bölim tugadi. Endi — tinglaş.</h3>
+    <p>Audioni tinglang va savolga javob bering. Ovozni yoqing.</p>
+    ${ok?'':'<p class="note">Brauzeringiz audio ijrosini qöllab-quvvatlamaydi. Bu bölimni ötkazib yuboriş mumkin.</p>'}
+    <div class="acts">${ok?`<button class="btn btn-ink" id="go">Davom etiş <span class="dot">${ARROW}</span></button>`:''}<button class="btn btn-ghost" id="skipL" style="color:var(--ink);border-color:rgba(14,46,36,.3)">Tinglaşni ötkazib yuboriş</button></div></div>`,
+  ()=>{const g=$('#go'); if(g) g.onclick=()=>{S.stage='q';render();}; $('#skipL').onclick=()=>{S.skipL=true;finish();};});}
+
+function q(){ const it=S.items[S.i], n=S.items.length, isL=it.type==='l';
+  S.sel=null;S.plays=0;S.speaking=false; band.textContent=`SAVOL ${String(S.i+1).padStart(2,'0')}/${n}`;
+  const prompt=isL?it.q:it.q.replace('___','<span class="blank"></span>');
+  const bars=Array.from({length:36},(_,k)=>`<i style="--h:${Math.round(20+80*Math.abs(Math.sin(k*1.7+1)))}%;--wd:${(k%9)*-.1}s"></i>`).join('');
+  swap(`<div class="qtop"><span>${isL?'EŞITIB TUŞUNIŞ':'GRAMMATIKA'} · ${it.lvl}</span><span>${S.i+1} / ${n}</span></div>
+    <div class="bar"><i style="width:${S.i/n*100}%"></i></div>
+    ${isL?`<p class="inst">Audioni tinglang</p><div class="player" id="player"><button class="play" id="play" aria-label="Audioni ijro etiş">${PLAY}</button><div class="wave" aria-hidden="true">${bars}</div><span class="plays" id="plays">${MAX_PLAYS} MARTA</span></div><div class="note" id="anote" hidden></div><p class="prompt" style="font-size:clamp(20px,2.4vw,28px);margin-top:22px">${prompt}</p>`
+    :`<p class="inst">Böş joyni töldiring</p><p class="prompt">${prompt}</p>`}
+    <div class="opts">${it.opts.map((o,k)=>`<button class="opt" data-k="${k}" aria-pressed="false"><span class="k">${'ABCD'[k]}</span><span>${o.t}</span></button>`).join('')}</div>
+    <div class="qfoot"><button class="linkbtn" id="idk">Bilmayman</button><button class="btn btn-ink" id="next" disabled>${S.i===n-1?'Bort talonini oliş':'Keyingi'} <span class="dot">${ARROW}</span></button></div>`,
+  ()=>{requestAnimationFrame(()=>{const b=$('.bar i',quiz); if(b) b.style.width=((S.i+1)/n*100)+'%';});
+    $$('.opt',quiz).forEach(b=>b.onclick=()=>choose(+b.dataset.k));
+    $('#next').onclick=next; $('#idk').onclick=()=>{S.sel=-1;next();};
+    if(isL) $('#play').onclick=()=>play(it);});}
+function choose(k){S.sel=k;$$('.opt',quiz).forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.k===k)));$('#next').disabled=false;}
+function next(){ if(S.sel===null) return; stop(); const it=S.items[S.i];
+  S.ans[S.i]=S.sel>=0&&it.opts[S.sel].ok; S.i++;
+  if(S.i>=S.items.length) return finish();
+  if(S.i===GRAMMAR.length&&!S.brk){S.brk=true;S.stage='break';}
+  render(); keep(); }
+
+let audioEl=null, safety=null;
+function speaking(on){S.speaking=on; const p=$('#player',quiz); if(p) p.classList.toggle('speaking',on);
+  const b=$('#play',quiz); if(b){b.disabled=on||S.plays>=MAX_PLAYS; b.innerHTML=S.plays>0?REPLAY:PLAY;}}
+function play(it){ if(S.speaking||S.plays>=MAX_PLAYS) return; S.plays++;
+  const left=MAX_PLAYS-S.plays; $('#plays',quiz).textContent=left?`${left} MARTA QOLDI`:'TUGADI';
+  speaking(true); const done=()=>{clearTimeout(safety);speaking(false);};
+  if(it.audio){audioEl=new Audio(it.audio);audioEl.onended=done;audioEl.onerror=()=>{done();warn();};audioEl.play().catch(()=>{done();warn();});return;}
+  if(!hasTTS){done();warn();return;}
+  speechSynthesis.cancel(); const u=new SpeechSynthesisUtterance(it.say);
+  if(voice){u.voice=voice;u.lang=voice.lang;}else u.lang='en-GB';
+  u.rate=({A1:.82,A2:.88,B1:.94,B2:.98,C1:1})[it.lvl]||.92; u.onend=done; u.onerror=done;
+  safety=setTimeout(done,it.say.length*95+2500); speechSynthesis.speak(u);}
+function stop(){clearTimeout(safety); if(hasTTS) speechSynthesis.cancel(); if(audioEl){audioEl.pause();audioEl=null;}}
+function warn(){const n=$('#anote',quiz); if(n){n.hidden=false;n.textContent='Ovoz çiqmadi? Ovozni tekşiring yoki saytni Chrome’da oçing.';}}
+
+function finish(){ stop(); const per={}; BANDS.forEach(b=>per[b]={ok:0,n:0}); let g=0,l=0,lN=0;
+  S.items.forEach((it,k)=>{ if(it.type==='l'&&S.skipL) return; const ok=!!S.ans[k]; per[it.lvl].n++; if(ok) per[it.lvl].ok++;
+    if(it.type==='g'){if(ok)g++;}else{lN++; if(ok)l++;} });
+  let level='Pre-A1',cO=0,cN=0;
+  for(const b of BANDS){const p=per[b]; if(!p.n) continue; cO+=p.ok; cN+=p.n; if(cO/cN>=.6&&p.ok/p.n>=.5) level=b;}
+  S.result={level,g:Math.round(g/GRAMMAR.length*100),l:lN?Math.round(l/lN*100):null};
+  saveLast(S.result); S.stage='result'; render(); keep(); }
+
+const fmt=x=>String(x).replace('.',',');
+function result(){ const r=S.result, idx=ORDER.indexOf(r.level), left=Math.max(0,4-idx);
+  band.textContent='BORT TALONI';
+  const time=left?`${fmt(left*1.5)}–${left*2} oy`:'—';
+  swap(`<div class="pass">
+    <div class="pass-main">
+      <div class="route">
+        <div><div class="lbl">HOZIRGI ÖRIN</div><div class="big lv">${r.level}</div></div>
+        <div style="flex:1;border-top:3px dashed rgba(242,165,65,.7);margin:0 6px 34px;position:relative"><span style="position:absolute;left:50%;top:-20px;transform:translateX(-50%);color:var(--amber-d)">${PLANE}</span></div>
+        <div style="text-align:right"><div class="lbl">MANZIL</div><div class="big">B2</div></div>
+      </div>
+      <p style="margin:14px 0 0;color:#33493F;font-size:17px">${DESC[r.level]}</p>
+      <div class="skills">
+        <div class="sk"><span>Grammatika</span><div class="bar"><i style="width:0" data-w="${r.g}"></i></div><span class="v">${r.g}%</span></div>
+        <div class="sk"><span>Tinglaş</span>${r.l===null?'<span style="color:#5A6E64;font-size:14px">ötkazildi</span><span></span>':`<div class="bar"><i style="width:0" data-w="${r.l}"></i></div><span class="v">${r.l}%</span>`}</div>
+      </div>
+      <p class="disclaim">Natija taxminiy. Aniq daraja markazdagi kiriş suhbatida belgilanadi.</p>
+    </div>
+    <div class="pass-stub">
+      <div class="lbl">PARVOZ VAQTI</div><div class="val">${left?time:'Siz allaqaçon B2 dasiz!'}</div>
+      <div class="lbl" style="margin-top:10px">JÖNAŞ</div><div class="val">Işdan keyin</div>
+      <div class="barcode" aria-hidden="true" style="height:60px;margin-top:16px"></div>
+      <a class="btn btn-ink" style="margin-top:16px;justify-content:space-between" href="https://t.me/${CONFIG.telegram.replace(/^@/,'')}" target="_blank" rel="noopener">Örinni band qiliş <span class="dot">${ARROW}</span></a>
+      <button class="linkbtn" id="again" style="margin-top:6px">Qayta topşiriş</button>
+    </div></div>`,
+  ()=>{requestAnimationFrame(()=>requestAnimationFrame(()=>$$('[data-w]',quiz).forEach(b=>b.style.width=b.dataset.w+'%')));
+    $('#again').onclick=()=>{reset();S.stage='q';render();keep();};});}
+
+addEventListener('keydown',e=>{ if(!S||S.stage!=='q'||e.metaKey||e.ctrlKey||e.altKey) return;
+  const r=quiz.getBoundingClientRect(); if(r.bottom<0||r.top>innerHeight) return;
+  const k='1234'.indexOf(e.key); if(k>=0){choose(k);e.preventDefault();}
+  else if(e.key==='Enter'&&S.sel!==null&&!document.activeElement.matches('a,button:not(.opt)')){next();e.preventDefault();}});
+reset(); render();
+})();
+</script>
+</body>
+</html>
