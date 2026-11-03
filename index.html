@@ -152,10 +152,10 @@ h2 .am{color:var(--amber)}
 .fl-head{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--soft);background:rgba(255,255,255,.04)}
 
 /* quiz (check-in) */
-.quiz{margin-top:48px;position:relative;background:var(--ivory);color:var(--ink);border-radius:30px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.35)}
-.quiz-band{background:var(--sage);color:#fff;display:flex;justify-content:space-between;align-items:center;padding:18px 34px;font-weight:800;letter-spacing:.12em;font-size:15px}
+.quiz{margin-top:48px;position:relative;color:var(--ink);border-radius:30px;box-shadow:0 40px 80px rgba(0,0,0,.35)}
+.quiz-band{background:var(--sage);border-radius:30px 30px 0 0;color:#fff;display:flex;justify-content:space-between;align-items:center;padding:18px 34px;font-weight:800;letter-spacing:.12em;font-size:15px}
 .quiz-band .mono{font-weight:500;letter-spacing:.04em}
-.quiz-body{padding:38px 40px 40px;min-height:420px}
+.quiz-body{background:var(--ivory);border-radius:0 0 30px 30px;overflow:hidden;padding:38px 40px 40px;min-height:420px}
 .qview{animation:qIn .55s var(--ease)}
 .qview.out{animation:qOut .2s ease forwards}
 @keyframes qIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
